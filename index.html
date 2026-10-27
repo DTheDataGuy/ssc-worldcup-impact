@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SSC Business Data Report No. 01 — Seattle's World Cup Impact Kit</title>
+<meta name="description" content="Verified data, infographic builder, talking points, copy, and press prep for Seattle Sports Commission's FIFA World Cup 2026 impact story.">
+<link rel="icon" href="assets/ssc-logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="topbar" id="top">
+  <div class="topbar__inner">
+    <a class="brand" href="#top" aria-label="SSC Business Data Report home">
+      <img src="assets/ssc-logo.svg" alt="" width="34" height="34">
+      <span class="brand__text"><strong>SSC Business Data Report</strong><span>No. 01 · FIFA World Cup 2026™</span></span>
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#studio">Infographic</a>
+      <a href="#numbers">By the Numbers</a>
+      <a href="#story">Story</a>
+      <a href="#copy">Copy Kit</a>
+      <a href="#media">Media</a>
+      <a href="#press">Press Prep</a>
+      <a href="#sources">Sources</a>
+      <a href="#next">Next steps</a>
+    </nav>
+    <a class="btn btn--ghost btn--sm" href="data.csv" download="SSC-World-Cup-Data-Bank.csv"><span>Download data<span class="hide-sm"> (CSV)</span></span></a>
+  </div>
+</header>
+
+<main id="main">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__pitch" aria-hidden="true"></div>
+    <div class="wrap hero__inner">
+      <p class="kicker">Prepared for Jo Lopez · Seattle Sports Commission</p>
+      <h1 class="hero__title">Seattle's World Cup,<br>by the numbers.</h1>
+      <div class="hero__big" aria-label="$889 million total economic impact">
+        <span class="hero__num">$889M</span>
+        <span class="hero__numlabel">estimated total economic impact for Seattle &amp; King County<br><span class="muted-inv">Visit Seattle · analysis by Tourism Economics</span></span>
+      </div>
+      <p class="hero__lede">Everything SSC needs for its first Business Data Report: an infographic builder in SSC colors, a bank of figures you can publish with sources attached, talking points, ready-to-post copy, story ideas for media, and prep for tough press questions. Every figure comes from an official published source.</p>
+      <ul class="trust">
+        <li><strong id="statCount">—</strong> figures, each linked to its source</li>
+      </ul>
+      <div class="hero__cta">
+        <a class="btn btn--yellow" href="#studio">Build the infographic</a>
+        <a class="btn btn--line" href="#press">Prep for press</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STUDIO -->
+  <section class="section section--studio" id="studio">
+    <div class="wrap">
+      <header class="section__head">
+        <p class="eyebrow">01 · Infographic Studio</p>
+        <h2>The $889M graphic, ready for your designers.</h2>
+        <p class="section__intro">Build one graphic or a full carousel that tells both sides of the story: the numbers and the people behind them. Choose from seven slide layouts: the $889M impact graphic, figure spotlights, approved quotes, story takeaways, a timeline, a cover and a closing slide. Every slide arranges and sizes itself for each format, and you can drag, pin and edit anything. Download a PNG, a ZIP of every slide or a PDF for LinkedIn, or share straight to Instagram, Facebook and other apps from a phone.</p>
+      </header>
+
+      <div class="deck" id="deck">
+        <div class="deck__bar">
+          <div class="deck__title"><span class="ctrl__label">Slides</span><span class="deck__count" id="deckCount"></span></div>
+          <div class="deck__actions">
+            <div class="addslide">
+              <button class="btn btn--yellow btn--sm" id="addSlideBtn" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="addMenu">+ Add slide</button>
+              <div class="addmenu" id="addMenu" role="menu" hidden></div>
+            </div>
+            <button class="btn btn--line btn--sm" id="deckReco" type="button">Build the recommended carousel</button>
+            <button class="btn btn--text btn--sm" id="deckSingle" type="button">Single graphic</button>
+            <label class="toggle"><input type="checkbox" id="deckNums" checked><span>Slide numbers</span></label>
+          </div>
+        </div>
+        <ol class="deck__strip" id="deckStrip" aria-label="Slides. Drag to reorder."></ol>
+        <div class="deck__tools" id="deckTools"></div>
+      </div>
+
+      <div class="studio">
+        <div class="studio__stage" id="stage">
+          <div class="stage__scaler" id="scaler">
+            <div class="poster" id="poster" data-format="feed" data-theme="night"></div>
+          </div>
+        </div>
+
+        <aside class="studio__panel" aria-label="Infographic controls">
+          <div class="ctrl">
+            <span class="ctrl__label">Format</span>
+            <div class="seg" role="radiogroup" aria-label="Format" id="fmtSeg">
+              <button role="radio" aria-checked="true" data-fmt="feed">Feed 4:5</button>
+              <button role="radio" aria-checked="false" data-fmt="square">Square</button>
+              <button role="radio" aria-checked="false" data-fmt="story">Story 9:16</button>
+              <button role="radio" aria-checked="false" data-fmt="banner">Web 16:9</button>
+            </div>
+          </div>
+          <div class="ctrl">
+            <span class="ctrl__label">Theme</span>
+            <div class="seg" role="radiogroup" aria-label="Theme" id="themeSeg">
+              <button role="radio" aria-checked="true" data-theme="night"><i class="sw sw--night"></i>Night Blue</button>
+              <button role="radio" aria-checked="false" data-theme="bay"><i class="sw sw--bay"></i>Bay Green</button>
+              <button role="radio" aria-checked="false" data-theme="light"><i class="sw sw--light"></i>Light</button>
+            </div>
+          </div>
+          <div class="ctrl">
+            <span class="ctrl__label">Match-day photo <em>(optional)</em></span>
+            <div class="photo-row">
+              <label class="btn btn--line btn--sm file">
+                <input type="file" accept="image/*" id="photoIn"> Add photo
+              </label>
+              <button class="btn btn--text btn--sm" id="photoClear" hidden>Remove</button>
+            </div>
+            <p class="hint">Only use photos SSC has the rights to. Don't add FIFA marks unless your license allows it.</p>
+          </div>
+          <details class="ctrl slots" open>
+            <summary><span class="ctrl__label">Edit this slide</span><span class="hint">Auto-placed · click or drag to adjust</span></summary>
+            <div id="slotEditor"></div>
+            <button class="btn btn--text btn--sm" id="slotReset">Reset this slide</button>
+          </details>
+          <div class="ctrl ctrl--export">
+            <span class="ctrl__label">Download &amp; share</span>
+            <div class="exp-grid">
+              <button class="btn btn--yellow" id="exportBtn" type="button">Download this slide · PNG</button>
+              <button class="btn btn--ghost" id="zipBtn" type="button">All slides · ZIP</button>
+              <button class="btn btn--line" id="pdfBtn" type="button">LinkedIn carousel · PDF</button>
+              <button class="btn btn--line" id="shareBtn" type="button" hidden>Share to Instagram, Facebook &amp; more</button>
+            </div>
+            <p class="hint" id="shareHint" hidden>On a phone, Share opens your apps so you can post the slides directly.</p>
+            <div class="exp-row">
+              <button class="btn btn--text btn--sm" id="capBtn" type="button">Copy post caption</button>
+              <button class="btn btn--text btn--sm" id="altBtn" type="button">Copy alt text</button>
+            </div>
+            <div class="exp-row">
+              <button class="btn btn--text btn--sm" id="saveBtn" type="button">Save project</button>
+              <label class="btn btn--text btn--sm file"><input type="file" accept=".json,application/json" id="openIn">Open project</label>
+            </div>
+            <p class="hint" id="exportMsg" role="status" aria-live="polite"></p>
+            <details class="guide">
+              <summary>Which format for which platform</summary>
+              <table class="guide__t">
+                <thead><tr><th scope="col">Where</th><th scope="col">Format</th><th scope="col">Download</th></tr></thead>
+                <tbody>
+                  <tr><td>Instagram post or carousel</td><td>Feed 4:5</td><td>ZIP, or Share on a phone. A carousel holds up to 20 photos and videos (<a href="https://help.instagram.com/269314186824048" target="_blank" rel="noopener">Instagram Help</a>).</td></tr>
+                  <tr><td>Instagram &amp; Facebook Stories</td><td>Story 9:16</td><td>PNG per slide (<a href="https://blog.hootsuite.com/social-media-image-sizes-guide/" target="_blank" rel="noopener">Hootsuite</a>: 1080×1920 for full-screen formats)</td></tr>
+                  <tr><td>Facebook post</td><td>Feed 4:5 or Square</td><td>PNG or ZIP (<a href="https://blog.hootsuite.com/social-media-image-sizes-guide/" target="_blank" rel="noopener">Hootsuite</a>)</td></tr>
+                  <tr><td>LinkedIn carousel</td><td>Square or Feed 4:5</td><td>PDF, added to a post as a document. LinkedIn accepts PDFs up to 100MB and 300 pages (<a href="https://www.linkedin.com/help/linkedin/answer/a518909" target="_blank" rel="noopener">LinkedIn Help</a>).</td></tr>
+                  <tr><td>Website, email, slides</td><td>Web 16:9</td><td>PNG</td></tr>
+                </tbody>
+              </table>
+              <p class="hint">Every export is 1080px wide or more. Instagram keeps photos at full quality up to 1080px wide when the shape is between 1.91:1 and 3:4 (<a href="https://help.instagram.com/1631821640426723/" target="_blank" rel="noopener">Instagram Help</a>). Check each app's preview before posting.</p>
+            </details>
+          </div>
+        </aside>
+      </div>
+
+      <div class="design-notes">
+        <h3>Notes for the designer</h3>
+        <ul>
+          <li><strong>Keep $889M by itself in the center.</strong> The $109M in taxes is already part of it, so don't add the two together or put a sum anywhere.</li>
+          <li><strong>$513.3M and $110.6M are parts reported next to the total.</strong> They're not designed to add up to $889M, so don't draw them as slices of a pie or a stacked bar.</li>
+          <li><strong>Keep the source line.</strong> It updates automatically to list the source of every figure and quote on each slide. With the recommended figures it reads: "Sources: Visit Seattle (Sept. 22, 2026; analysis by Tourism Economics, part of Oxford Economics); SeattleFWC26 Final Report (Sept. 2026)."</li>
+          <li><strong>Keep the wording that limits each claim:</strong> "estimated," "supported," "ticketed," "on match days." Those words are what make the graphic accurate.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- NUMBERS -->
+  <section class="section" id="numbers">
+    <div class="wrap">
+      <header class="section__head">
+        <p class="eyebrow">02 · By the Numbers</p>
+        <h2>The data bank. Every figure can be published with its source.</h2>
+        <p class="section__intro">Each card includes a caption you can post as-is, a link to the original source, and a note on how to use the number correctly. Starred cards are the ones recommended for the first infographic.</p>
+      </header>
+
+      <div class="filters">
+        <div class="chips" id="chips" role="tablist" aria-label="Filter by category"></div>
+        <div class="filters__right">
+          <label class="toggle"><input type="checkbox" id="picksOnly"><span>On the infographic only</span></label>
+          <label class="search"><span class="sr-only">Search figures</span><input type="search" id="q" placeholder="Search figures…"></label>
+        </div>
+      </div>
+      <p class="results" id="resultCount" role="status"></p>
+      <div class="cards" id="cards"></div>
+
+      <aside class="callout">
+        <h3>Where the official sources differ</h3>
+        <div class="callout__grid">
+          <div><strong>Jobs</strong><p>Visit Seattle says "about 20,000." SeattleFWC26 says "20K+." <em>Use "about 20,000 jobs supported."</em></p></div>
+          <div><strong>Tax revenue</strong><p>Visit Seattle says $109M. SeattleFWC26 says $108.9M. <em>Use $109M. It's the same number, rounded.</em></p></div>
+          <div><strong>Volunteers</strong><p>The Final Report says "2,000+." The Legacy site says "2k." <em>Use "2,000+."</em></p></div>
+          <div><strong>"Nearly $900M"</strong><p>This appears in SeattleFWC26 quotes. <em>Use exactly $889M in SSC's own copy.</em></p></div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="section section--dark" id="story">
+    <div class="wrap">
+      <header class="section__head">
+        <p class="eyebrow eyebrow--inv">03 · The Story</p>
+        <h2>Five takeaways the public should remember.</h2>
+      </header>
+
+      <ol class="takeaways">
+        <li><span class="tk__n">1</span><div><h3>A greater-than-expected total.</h3><p>Visit Seattle forecast $929M in December 2024 and $846M in March 2026. The final estimate is $889M, which Visit Seattle calls a "greater-than-expected total." <a class="tk__src" href="https://visitseattle.org/press/press-releases/visit-seattle-economic-impact-fifa-2026/" target="_blank" rel="noopener">Visit Seattle ↗</a></p></div></li>
+        <li><span class="tk__n">2</span><div><h3>The world showed up.</h3><p>Visit Seattle credits a larger contingent of international fans at matches, more overnight visitors at watch parties than anticipated, and the addition of a second U.S. Men's National Team match. <a class="tk__src" href="https://visitseattle.org/press/press-releases/visit-seattle-economic-impact-fifa-2026/" target="_blank" rel="noopener">Visit Seattle ↗</a></p></div></li>
+        <li><span class="tk__n">3</span><div><h3>It moved people, not just money.</h3><p>The tournament drew 401,400 ticketed fans and more than 1.2M attendees at Seattle fan sites. Four out of five ticketed fans arrived without a personal car, and Link light rail set a one-day record of 309K riders. <a class="tk__src" href="https://bit.ly/SEA26FinalReport" target="_blank" rel="noopener">Final Report ↗</a></p></div></li>
+        <li><span class="tk__n">4</span><div><h3>The legacy outlasts the final whistle.</h3><p>More than 35 community and legacy projects, including 52 RAVE Foundation playfields and free tickets and support for more than 1,400 young people and their caregivers. <a class="tk__src" href="https://bit.ly/SEA26FinalReport" target="_blank" rel="noopener">Final Report ↗</a> <a class="tk__src" href="https://www.sea2026.org" target="_blank" rel="noopener">Legacy site ↗</a></p></div></li>
+        <li><span class="tk__n">5</span><div><h3>The lessons are part of the win.</h3><p>Hospitality results were mixed, and hotel occupancy fell even as revenue rose. SeattleFWC26's lessons, like "just one block makes a big difference in fan traffic," point the way for the next major event. <a class="tk__src" href="https://visitseattle.org/press/press-releases/visit-seattle-economic-impact-fifa-2026/" target="_blank" rel="noopener">Visit Seattle ↗</a> <a class="tk__src" href="https://bit.ly/SEA26FinalReport" target="_blank" rel="noopener">Final Report ↗</a></p></div></li>
+      </ol>
+
+      <div class="story-grid">
+        <figure class="trail">
+          <figcaption><h3>The forecast trail</h3><p>Estimated total economic impact, Seattle &amp; King County</p></figcaption>
+          <div class="trail__chart" id="trail" role="img" aria-label="Forecasts: $929M in December 2024, $846M in March 2026, final $889M in September 2026."></div>
+          <p class="fine">Sources: <a href="https://visitseattle.org/press/press-release-archive/fifaworldcupeconomicimpact2024/" target="_blank" rel="noopener">Visit Seattle Dec. 2024 forecast</a>; <a href="https://visitseattle.org/press/press-releases/visit-seattle-economic-impact-fifa-2026/" target="_blank" rel="noopener">Visit Seattle Sept. 22, 2026 release</a>. Visit Seattle says the March forecast was lowered because fewer international visitors and less capital project spending were expected.</p>
+        </figure>
+
+        <div class="matchlist">
+          <h3>Six matches at Seattle Stadium</h3>
+          <ul id="matches"></ul>
+          <p class="fine">Schedule: <a href="https://visitseattle.org/sea26/match-info/" target="_blank" rel="noopener">Visit Seattle</a>. Results: <a href="https://inside.fifa.com/organisation/news/seattle-stadium-world-cup-2026-wrap-sounders-dzeko-dempsey" target="_blank" rel="noopener">FIFA</a>. Juneteenth and Pride Match Days: <a href="https://www.sea2026.org" target="_blank" rel="noopener">Seattle 2026 Legacy site</a>.</p>
+        </div>
+      </div>
+
+      <div class="talk">
+        <div class="talk__card">
+          <p class="eyebrow eyebrow--inv">30-second version</p>
+          <blockquote id="elevator">Seattle delivered on the world stage. Visit Seattle estimates the World Cup generated $889 million in total economic impact for Seattle and King County, including $109 million in state and local tax revenue, and supported about 20,000 jobs. Visit Seattle calls it a greater-than-expected total. The legacy lasts, too: more than 35 community and legacy projects, including 52 RAVE Foundation playfields and free tickets for more than 1,400 young people and their caregivers.</blockquote>
+          <button class="btn btn--yellow btn--sm" data-copy="#elevator">Copy</button>
+        </div>
+        <div class="pillars">
+          <div><span>Scale</span><p>$889M impact · $109M taxes · about 20,000 jobs<a class="tk__src" href="https://visitseattle.org/press/press-releases/visit-seattle-economic-impact-fifa-2026/" target="_blank" rel="noopener">Visit Seattle ↗</a></p></div>
+          <div><span>People</span><p>401,400 ticketed fans · 1.2M+ fan-site attendees · 2,000+ volunteers<a class="tk__src" href="https://bit.ly/SEA26FinalReport" target="_blank" rel="noopener">Final Report ↗</a></p></div>
+          <div><span>Legacy</span><p>35+ projects · 52 playfields · 1,400+ youth and chaperones<a class="tk__src" href="https://bit.ly/SEA26FinalReport" target="_blank" rel="noopener">Final Report ↗</a></p></div>
+          <div><span>Learning</span><p>Mixed results for hospitality · lessons for future events<a class="tk__src" href="https://bit.ly/SEA26FinalReport" target="_blank" rel="noopener">Final Report ↗</a></p></div>
+        </div>
+      </div>
+
+      <h3 class="quotes__title">Quotes you can use</h3>
+      <div class="quotes" id="quotes"></div>
+    </div>
+  </section>
+
+  <!-- COPY KIT -->
+  <section class="section" id="copy">
+    <div class="wrap">
+      <header class="section__head">
+        <p class="eyebrow">04 · Copy Kit</p>
+        <h2>Ready-to-post copy for every channel.</h2>
+        <p class="section__intro">Uses the same figures as the infographic. Copy it, adapt it to SSC's voice, and post.</p>
+      </header>
+      <div class="tabs" role="tablist" aria-label="Copy formats" id="copyTabs"></div>
+      <div class="copypanel" id="copyPanel" role="tabpanel"></div>
+    </div>
+  </section>
+
+  <!-- MEDIA -->
+  <section class="section section--tint" id="media">
+    <div class="wrap">
+      <header class="section__head">
+        <p class="eyebrow">05 · Media Playbook</p>
+        <h2>Eight story angles beyond the headline number.</h2>
+        <p class="section__intro">Each angle has a hook, the data behind it, and a suggested format. These are proposals for the team to choose from.</p>
+      </header>
+      <div class="angles" id="angles"></div>
+
+      <div class="series">
+        <div>
+          <p class="eyebrow">The series</p>
+          <h3>The SSC Business Data Report: a recurring series</h3>
+          <p>Jo asked for something that could be "the first of many." Here's a structure that can repeat for every major event.</p>
+        </div>
+        <ol class="series__list">
+          <li><strong>No. 01: FIFA World Cup 2026™</strong><span>This kit. Regional impact, people, legacy.</span><em class="tag tag--go">Ready</em></li>
+          <li><strong>No. 02: The neighborhood story</strong><span>How the impact reached small businesses and community activations. Partners' data will need clearance first.</span><em class="tag">Proposed</em></li>
+          <li><strong>No. 03: What we'd do again</strong><span>SeattleFWC26's lessons turned into a readiness scorecard for the next bid.</span><em class="tag">Proposed</em></li>
+          <li><strong>Every edition</strong><span>The same format each time: one hero number, 8–12 supporting figures, source line, caption bank, and press Q&amp;A.</span><em class="tag">Template</em></li>
+        </ol>
+      </div>
+
+      <div class="sequence">
+        <h3>A suggested rollout order</h3>
+        <ol>
+          <li><strong>Launch</strong> Post the infographic carousel on Instagram and LinkedIn, and publish the website story the same day.</li>
+          <li><strong>Amplify</strong> Ask commissioners and partners to reshare on LinkedIn using the quote bank.</li>
+          <li><strong>Pitch</strong> Offer one angle to business press, like the forecast trail or the mobility story, with Beth as the spokesperson.</li>
+          <li><strong>Sustain</strong> Run one legacy feature a week (playfields, youth access, blind soccer hub) using SeattleFWC26 photos.</li>
+          <li><strong>Close</strong> Publish an op-ed on lessons for the next major event to position SSC for future bids.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRESS PREP -->
+  <section class="section" id="press">
+    <div class="wrap">
+      <header class="section__head">
+        <p class="eyebrow">06 · Press Prep</p>
+        <h2>Answers to the questions reporters will ask.</h2>
+        <p class="section__intro">These are short, confident answers that hold up because they match exactly what the official sources say.</p>
+      </header>
+      <div class="press">
+        <div class="qa" id="qa"></div>
+        <aside class="sayavoid">
+          <h3>Say this, not that</h3>
+          <table>
+            <thead><tr><th scope="col">Say</th><th scope="col">Avoid</th></tr></thead>
+            <tbody id="sayAvoid"></tbody>
+          </table>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOURCES -->
+  <section class="section section--tint" id="sources">
+    <div class="wrap">
+      <header class="section__head">
+        <p class="eyebrow">07 · Sources</p>
+        <h2>Where every figure comes from.</h2>
+        <p class="section__intro">SSC's rule is to stay in lockstep with Visit Seattle on every number. The figures in this kit come only from official publications: Visit Seattle, SeattleFWC26, SSC, FIFA, Sound Transit, King County Metro, and the Downtown Seattle Association. News coverage is used only for press prep.</p>
+      </header>
+      <div class="srcs" id="srcs"></div>
+      <p class="fine">Not in this kit: independent or alternative economic models, and partner program data that hasn't been cleared yet. That keeps every public figure consistent with Visit Seattle's official numbers.</p>
+    </div>
+  </section>
+
+  <!-- NEXT STEPS -->
+  <section class="section section--dark" id="next">
+    <div class="wrap">
+      <header class="section__head">
+        <p class="eyebrow eyebrow--inv">08 · Next steps</p>
+        <h2>Five decisions to launch.</h2>
+        <p class="section__intro inv">Check them off as the team decides. Once these are set, the first Business Data Report is ready to go out.</p>
+      </header>
+      <ol class="agenda" id="agenda"></ol>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <div class="footer__brand"><img src="assets/ssc-logo.svg" alt="" width="28" height="28"><span>SSC Business Data Report · No. 01</span></div>
+    <p>Data compiled and verified by The Data Guys™ for the Seattle Sports Commission. Figures reflect official published reports from Visit Seattle, SeattleFWC26, FIFA, Sound Transit, King County Metro, and the Downtown Seattle Association. FIFA World Cup 2026™ is a trademark of FIFA.</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/html-to-image.js"></script>
+<script src="data.js"></script>
+<script src="content.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
