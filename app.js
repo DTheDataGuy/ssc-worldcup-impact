@@ -365,12 +365,12 @@
   }
   // ================= SLIDES & CAROUSEL =================
   // A deck holds one or more slides. Every slide shares the format and theme so a carousel stays consistent.
-  const TYPE_NAME = { cover:'Cover', hub:'Impact graphic', spot:'Figure spotlight', quote:'Quote', story:'Story takeaway', trail:'Timeline', close:'Closing' };
+  const TYPE_NAME = { cover:'Cover', hub:'Impact graphic', spot:'Figure spotlight', quote:'Quote', story:'Story chapter', trail:'Timeline', close:'Closing' };
   const TYPE_DESC = {
     hub:'A center figure with supporting figures placed around it.',
     spot:'One figure, its caption in source wording and up to three supporting figures.',
     quote:'An approved quote, word for word, with an optional figure.',
-    story:'One of the five takeaways, with the figures that back it up.',
+    story:'A chapter of the story (economic impact, regional & local, community, legacy) or the lessons, with the figures that back it up.',
     trail:'Two to four figures in order, like the forecast trail.',
     cover:'An opening slide that sets up the carousel.',
     close:'A final slide that lists the source of every figure in the carousel.'
@@ -380,18 +380,21 @@
   const base = () => ({ kicker:'SSC Business Data Report · No. 01', title:"Seattle's World Cup, by the numbers", size:100, photo:null });
   const MAKE = {
     hub:   () => ({ ...DEFAULT_STATE(), type:'hub', photo:null, quote:null }),
-    cover: () => ({ ...base(), type:'cover', cover:"Seattle's World Cup, by the numbers", sub:'FIFA World Cup 2026™ · Seattle · King County', fig:'impact', figLabel:'Estimated total economic impact', cue:'Swipe for the numbers →' }),
+    cover: () => ({ ...base(), type:'cover', cover:"Seattle's World Cup: the story behind the numbers", sub:'What it generated, what it meant and what it leaves behind', fig:'impact', figLabel:'Estimated total economic impact', cue:'Swipe for the story →' }),
     spot:  (o={}) => ({ ...base(), type:'spot', fig:'tax', label:null, sub:null, caption:null, support:['offsite','ops','jobs'], quote:null, ...o }),
     quote: (o={}) => ({ ...base(), type:'quote', q:0, fig:null, ...o }),
     story: (o={}) => { const t = o.tk ?? 2; return { ...base(), type:'story', tk:t, head:null, body:null, figs:[...TK[t].figs], ...o }; },
-    trail: () => ({ ...base(), type:'trail', head:'The forecast trail', figs:['fc2024','fc2026','impact'], note:'Visit Seattle says the March forecast was lowered because fewer international visitors and less capital project spending were expected.', noteSrc:'VS' }),
-    close: () => ({ ...base(), type:'close', head:'Read the reports behind the numbers', body:'Every figure in this carousel comes from these published sources.', cta:'seattlesports.org' })
+    trail: () => ({ ...base(), type:'trail', head:'A greater-than-expected total', figs:['fc2024','fc2026','impact'], note:'Visit Seattle says the March forecast was lowered because fewer international visitors and less capital project spending were expected.', noteSrc:'VS' }),
+    close: () => ({ ...base(), type:'close', head:'The final whistle was just the beginning', body:'Every figure in this story comes from these published sources.', cta:'seattlesports.org' })
   };
+  // The recommended carousel tells the story in the four chapters: economic impact, regional & local, community, legacy.
   const RECO = () => [
-    MAKE.cover(), MAKE.hub(), MAKE.spot(),
-    MAKE.story({ tk:2 }), MAKE.quote({ q:6, fig:'link' }),
-    MAKE.story({ tk:3 }), MAKE.trail(), MAKE.story({ tk:4 }),
-    MAKE.quote({ q:0 }), MAKE.close()
+    MAKE.cover(), MAKE.hub(),
+    MAKE.story({ tk:0 }), MAKE.trail(), MAKE.quote({ q:2, fig:'tax' }),
+    MAKE.story({ tk:1 }), MAKE.quote({ q:8, fig:'cid10' }),
+    MAKE.story({ tk:2 }), MAKE.quote({ q:9, fig:'stadium1' }),
+    MAKE.story({ tk:3 }), MAKE.quote({ q:0 }),
+    MAKE.close()
   ];
   const deck = { slides:[state], cur:0, nums:true };
   state.type = 'hub'; state.quote = null; state.photo = null;
@@ -451,7 +454,7 @@
         ${s.fig ? figBlock(s.fig,'q-fig','ge-fig') : ''}`;
     } else if (s.type === 'story'){
       const T = TK[s.tk];
-      body = `<div class="t-main"><div class="t-eyebrow">What the numbers say</div><h2 class="t-h" data-edit="ge-head">${esc(s.head ?? T.t)}</h2><p class="t-b" data-edit="ge-body">${esc(s.body ?? T.text)}</p></div>
+      body = `<div class="t-main"><div class="t-eyebrow">${esc(T.eyebrow || 'What the numbers say')}</div><h2 class="t-h" data-edit="ge-head">${esc(s.head ?? T.t)}</h2><p class="t-b" data-edit="ge-body">${esc(s.body ?? T.text)}</p></div>
         ${s.figs.length ? `<div class="t-figs" style="--n:${s.figs.length}">${s.figs.map(id => figBlock(id,'t-fig')).join('')}</div>` : ''}`;
     } else if (s.type === 'trail'){
       body = `<h2 class="r-h" data-edit="ge-head">${esc(s.head)}</h2>
@@ -578,11 +581,11 @@
     $('#studio').scrollIntoView({ behavior:'smooth', block:'start' });
   });
   $('#deckReco').addEventListener('click', () => {
-    if (deck.slides.length > 1 && !confirm('Replace the current slides with the recommended 10-slide carousel?')) return;
+    if (deck.slides.length > 1 && !confirm('Replace the current slides with the recommended ' + RECO().length + '-slide story carousel?')) return;
     const keep = poster.dataset.format;
     deck.slides = RECO(); deck.cur = 0; state = deck.slides[0];
     if (keep === 'banner') { poster.dataset.format = 'feed'; $$('#fmtSeg button').forEach(x => x.setAttribute('aria-checked', x.dataset.fmt==='feed')); }
-    snapAll(); say('Recommended carousel ready: 10 slides');
+    snapAll(); say('Story carousel ready: ' + deck.slides.length + ' slides in four chapters');
   });
   $('#deckSingle').addEventListener('click', () => {
     if (deck.slides.length > 1 && !confirm('Go back to a single impact graphic? Your other slides will be removed.')) return;
@@ -614,7 +617,7 @@
     if (T === 'quote') { const q = QQ[s.q];
       h += blk(quoteSel('ge-q','Quote',s.q,'q',false) + `<p class="hint">Quotes appear word for word and can't be edited. Source: <a href="${S[q.src].url}" target="_blank" rel="noopener">${esc(S[q.src].short)} ↗</a></p>` + figSel('ge-fig','Pair with a figure (optional)',s.fig,'fig',true)); }
     if (T === 'story') { const t = TK[s.tk];
-      h += blk(`<label class="ge-lab" for="ge-tk">Takeaway</label><select id="ge-tk" data-k="tk" data-num>${TK.map((x,i) => `<option value="${i}" ${i===s.tk?'selected':''}>${i+1}. ${esc(x.t)}</option>`).join('')}</select>` +
+      h += blk(`<label class="ge-lab" for="ge-tk">Chapter</label><select id="ge-tk" data-k="tk" data-num>${TK.map((x,i) => `<option value="${i}" ${i===s.tk?'selected':''}>${esc(x.eyebrow)}: ${esc(x.t)}</option>`).join('')}</select>` +
         field('ge-head','Headline',s.head ?? t.t,'head') + field('ge-body','Story text',s.body ?? t.text,'body',{area:true,rows:4}) +
         `<p class="hint gi-src">Source: ${t.srcs.map(k => `<a href="${S[k].url}" target="_blank" rel="noopener">${esc(S[k].short)} ↗</a>`).join(' ')}${(s.head!==null||s.body!==null)?` · <button type="button" class="btn--text gi-restore" data-restore="head,body">Restore original wording</button>`:''}</p>`);
       h += blk(listEd('figs','Figures that back it up',4)); }
@@ -939,6 +942,7 @@
     $('#cards').innerHTML = list.length ? list.map(s => `
       <article class="card" data-cat="${s.cat}" data-id="${s.id}">
         <div class="card__top"><div class="card__v">${esc(s.value)}</div>${cardBadge(s)}</div>
+        ${KIT.catChapter && KIT.catChapter[s.cat] != null ? `<span class="card__ch card__ch--${KIT.catChapter[s.cat]}">Ch. ${KIT.chapters[KIT.catChapter[s.cat]].n} · ${esc(KIT.chapters[KIT.catChapter[s.cat]].name)}</span>` : ''}
         <div class="card__l">${esc(s.label)}</div>
         <div class="card__s">${esc(s.sub)}</div>
         <p class="card__cap">${esc(s.caption)}</p>
@@ -952,38 +956,9 @@
     const c = $('#clearQ'); if(c) c.onclick = () => { q=''; $('#q').value=''; picksOnly=false; $('#picksOnly').checked=false; cat='all'; $$('#chips .chip').forEach(x=>x.setAttribute('aria-selected', x.dataset.c==='all')); renderCards(); };
   }
 
-  // ---------- STORY ----------
-  (function trail(){
-    const pts = [
-      { l:'Dec 2024', s:'Preliminary forecast', v:929 },
-      { l:'Mar 2026', s:'March forecast', v:846 },
-      { l:'Sept 2026', s:'Final estimate', v:889, hi:true }
-    ];
-    const W=560, H=260, base=0, top=960, x0=40, bw=120, gap=(W-x0*2-bw*3)/2;
-    const y = v => H-34 - (v-base)/(top-base)*(H-80);
-    const bars = pts.map((p,i) => {
-      const x = x0 + i*(bw+gap), yy = y(p.v);
-      return `<g>
-        <rect x="${x}" y="${yy}" width="${bw}" height="${H-34-yy}" rx="8" fill="${p.hi?'#fce012':'rgba(128,214,214,.35)'}"/>
-        <text x="${x+bw/2}" y="${yy-12}" text-anchor="middle" font-family="Clash Display, sans-serif" font-weight="700" font-size="28" fill="${p.hi?'#fce012':'#ffffff'}">$${p.v}M</text>
-        <text x="${x+bw/2}" y="${H-12}" text-anchor="middle" font-family="Satoshi, sans-serif" font-weight="700" font-size="14" fill="#cfd9dd">${p.l}</text>
-      </g>`;
-    }).join('');
-    $('#trail').innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="presentation">
-      <line x1="20" y1="${H-34}" x2="${W-20}" y2="${H-34}" stroke="rgba(182,197,203,.35)" stroke-width="1.5"/>
-      ${bars}
-      
-    </svg>
-    <p class="fine" style="margin-top:8px;color:#cfd9dd">Forecasts and final estimate as published by Visit Seattle. Visit Seattle calls the final figure a "greater-than-expected total."</p>`;
-  })();
-
-  $('#matches').innerHTML = KIT.matches.map(m => `
-    <li class="match"><span class="match__d"><b>Match ${m.n}</b>${m.date}</span>
-      <span class="match__t">${esc(m.home)} vs. ${esc(m.away)}<span class="match__st">${esc(m.stage)}</span></span>
-      <span class="match__s">${m.score}</span></li>`).join('');
-
   $('#quotes').innerHTML = KIT.quotes.map((x,i) => `
     <figure class="quote" style="margin:0">
+      ${KIT.quoteChapter && KIT.quoteChapter[i] != null ? `<span class="quote__ch quote__ch--${KIT.quoteChapter[i]}">Chapter ${KIT.chapters[KIT.quoteChapter[i]].n} · ${esc(KIT.chapters[KIT.quoteChapter[i]].name)}</span>` : ''}
       <p id="qt${i}">${esc(x.text)}</p>
       <div class="quote__foot">
         <figcaption class="quote__who">${esc(x.who)}<span>${esc(x.role)}</span></figcaption>
@@ -1009,7 +984,7 @@
   // ---------- MEDIA ----------
   $('#angles').innerHTML = KIT.angles.map((a,i) => `
     <article class="angle">
-      <span class="angle__n">Angle ${String(i+1).padStart(2,'0')}</span>
+      <span class="angle__n">Angle ${String(i+1).padStart(2,'0')}${a.ch != null ? ` <em class="angle__ch angle__ch--${a.ch}">Chapter ${KIT.chapters[a.ch].n} · ${esc(KIT.chapters[a.ch].name)}</em>` : ''}</span>
       <h3>${esc(a.t)}</h3>
       <p class="angle__hook">${esc(a.hook)}</p>
       <p class="angle__data">${esc(a.data)}</p>

@@ -25,62 +25,96 @@ const SRC_LINE = "Sources: Visit Seattle (Sept. 22, 2026; analysis by Tourism Ec
 
 KIT.copy = [
   { id:"ig", label:"Instagram carousel", blocks:[
-    { h:"Slide plan (7 slides)", body:
-`1 · Cover: $889M. Seattle's World Cup, by the numbers.
-2 · The economy: $889M total economic impact · $109M state & local tax revenue · about 20,000 jobs supported
-3 · Where it came from: $513.3M off-site visitor spending · $110.6M operational spending
-4 · In the stadium: 6 matches · 401,400 ticketed fans · 8 national teams
-5 · Across the city: 1.2M+ attendees at Seattle fan sites · 3M+ downtown visitors on match days · 4 of 5 fans arrived without a personal car
-6 · What stays: 35+ legacy projects · 52 new community playfields · 1,400+ youth & caregivers at matches
-7 · Beyond the final whistle. Read the full report at seattlesports.org
-Source line on each slide: ${SRC_LINE}` },
+    { h:"Slide plan (12 slides, four chapters)", body:
+`1 · Cover: Seattle's World Cup: the story behind the numbers. $889M estimated total economic impact.
+2 · The $889M impact graphic: $889M at the center, supporting figures around it.
+
+CHAPTER 1 · ECONOMIC IMPACT: WHAT IT GENERATED
+3 · $889M total economic impact · $109M state & local tax revenue · about 20,000 jobs supported · $513.3M off-site visitor spending
+4 · A greater-than-expected total: $929M (Dec. 2024) → $846M (March 2026) → $889M (final)
+5 · Quote: Kelly Saling, Visit Seattle
+
+CHAPTER 2 · REGIONAL & LOCAL IMPACT: WHERE IT REACHED
+6 · 4 of 5 fans arrived without a personal car · 309K Link riders in one day · 3M+ downtown visitors on match days · 350+ small businesses supported
+7 · Quote: Tuyen Than, CIDBIA, with "10% increase in pedestrian traffic, Chinatown–International District"
+
+CHAPTER 3 · COMMUNITY ENGAGEMENT: WHO IT BROUGHT TOGETHER
+8 · 401,400 ticketed fans · 1.2M+ attendees at Seattle fan sites · 2,000+ volunteers · #1 U.S. host city for fans
+9 · Quote: The Athletic, with "#1 stadium experience"
+
+CHAPTER 4 · LASTING LEGACY: WHAT IT LEAVES BEHIND
+10 · 35+ community & legacy projects · 52 new community playfields · 1,400+ youth & chaperones · 50+ art & cultural projects
+11 · Quote: Beth Knox, SSC
+12 · The final whistle was just the beginning. Sources and seattlesports.org
+
+Source line on each slide: ${SRC_LINE}
+Tip: in the Infographic Studio, "Build the story carousel" creates exactly these 12 slides.` },
     { h:"Caption", body:
 `The final whistle was just the beginning.
 
-The FIFA World Cup 2026™ generated an estimated $889 million in total economic impact for Seattle and King County, including $109 million in state and local tax revenue, and supported about 20,000 jobs.
+What did the FIFA World Cup 2026™ mean for Seattle? Swipe through the story in four chapters.
 
-Behind that number: 6 matches, 401,400 ticketed fans, more than 1.2 million fan-site attendees, and 35+ community and legacy projects.
+1. What it generated: an estimated $889 million in total economic impact for Seattle and King County, including $109 million in state and local tax revenue, and about 20,000 jobs supported.
+2. Where it reached: four out of five ticketed fans arrived without a personal car, and more than 3 million visitors came downtown on match days.
+3. Who it brought together: 401,400 ticketed fans, more than 1.2 million at Seattle fan sites, and 2,000+ volunteers.
+4. What it leaves behind: 35+ community and legacy projects, including 52 new community playfields.
 
-This is the first edition of the SSC Business Data Report. Swipe for the full picture.
+This is the first edition of the SSC Business Data Report.
 
 ${SRC_LINE}` }
   ]},
   { id:"li", label:"LinkedIn", blocks:[
     { h:"Post", body:
-`Seattle's World Cup by the numbers: the first SSC Business Data Report.
+`What did the World Cup mean for Seattle? The first SSC Business Data Report tells the story in four chapters.
 
-This summer, our region hosted six FIFA World Cup 2026™ matches. Visit Seattle now estimates the tournament generated $889 million in total economic impact for Seattle and King County, including $109 million in state and local tax revenue, and supported about 20,000 jobs.
+1. What it generated. Visit Seattle estimates the tournament generated $889 million in total economic impact for Seattle and King County, including $109 million in state and local tax revenue that benefits programs such as housing, social services, and the arts. It supported about 20,000 jobs. Visit Seattle calls it a greater-than-expected total, credited to more international fans, more overnight visitors at watch parties, and a second U.S. Men's National Team match.
 
-Three things stand out:
+2. Where it reached. The impact didn't stay inside the stadium. Four out of five ticketed fans arrived without a personal car, Link light rail set a one-day record of 309,000 riders, and more than 3 million visitors came downtown on match days. Neighborhoods like Pioneer Square and the Chinatown–International District saw record crowds, and more than 350 small businesses were supported.
 
-1. A greater-than-expected total. Visit Seattle's March forecast was $846 million. Visit Seattle credits the final $889 million to a larger contingent of international fans at matches, more overnight visitors at watch parties than anticipated, and the addition of a second U.S. Men's National Team match.
+3. Who it brought together. 401,400 ticketed fans across six matches, more than 1.2 million people at Seattle's official fan sites, and more than 2,000 volunteers from around the state. Seattle ranked as the No. 1 U.S. host city for fans.
 
-2. It moved people, not just money. The tournament drew 401,400 ticketed fans and more than 1.2 million fan-site attendees, and four out of five ticketed fans arrived without a personal car.
+4. What it leaves behind. More than 35 community and legacy projects, including 52 permanent playfields and free tickets and support for more than 1,400 young people and their caregivers.
 
-3. It leaves a legacy. More than 35 community and legacy projects, including 52 RAVE Foundation playfields and free tickets and support for more than 1,400 young people and their caregivers.
+Results weren't the same for every business, and those lessons are part of the story too. They're how Seattle gets ready for the next major event.
 
-Results weren't the same for every business, and the lessons from this summer are part of the story. They're how Seattle gets ready for the next major event.
+The final whistle was just the beginning.
 
 ${SRC_LINE}` }
   ]},
   { id:"x", label:"X / Threads", blocks:[
-    { h:"Short post", body:`Seattle's World Cup, by the numbers: $889M in estimated total economic impact, $109M in state & local taxes, about 20,000 jobs supported, and 35+ legacy projects. (Visit Seattle; SeattleFWC26)` },
-    { h:"Follow-up post", body:`401,400 ticketed fans. 1.2M+ fan-site attendees. 4 of 5 fans arrived without a personal car. Seattle showed the world how to host. (SeattleFWC26 Final Report)` }
+    { h:"Thread (4 posts, one per chapter)", body:
+`1/4 What it generated: an estimated $889M in total economic impact for Seattle & King County, $109M in state & local taxes, and about 20,000 jobs supported. (Visit Seattle)
+
+2/4 Where it reached: 4 of 5 ticketed fans arrived without a personal car, Link set a 309K one-day record, and 3M+ visitors came downtown on match days. (SeattleFWC26; Seattle 2026 Legacy site)
+
+3/4 Who it brought together: 401,400 ticketed fans, 1.2M+ at Seattle fan sites, 2,000+ volunteers, and the No. 1 U.S. host city for fans. (SeattleFWC26 Final Report)
+
+4/4 What it leaves behind: 35+ community & legacy projects, 52 new playfields, and 1,400+ youth & caregivers at matches. The final whistle was just the beginning. (SeattleFWC26)` },
+    { h:"Short post", body:`Seattle's World Cup: an estimated $889M in total economic impact, 401,400 ticketed fans, 3M+ downtown visitors on match days, and 35+ legacy projects that stay. (Visit Seattle; SeattleFWC26)` }
   ]},
   { id:"web", label:"Website story", blocks:[
-    { h:"Headline", body:"Beyond the Final Whistle: What the World Cup Meant for Seattle's Economy" },
-    { h:"Story (about 330 words)", body:
-`This summer, Seattle hosted six FIFA World Cup 2026™ matches and welcomed fans from around the world. Now the numbers are in.
+    { h:"Headline", body:"Beyond the Final Whistle: What the World Cup Meant for Seattle" },
+    { h:"Subhead", body:"What the FIFA World Cup 2026™ generated for our economy, how it reached the whole region, who it brought together, and what it leaves behind." },
+    { h:"Story (about 650 words, four chapters)", body:
+`For 22 days this summer, the world watched as Seattle stood out as a premier host. Seattle Stadium welcomed six matches and eight national teams, and fans filled the city from the waterfront to the neighborhoods. Now the numbers are in, and they tell a bigger story than any single figure.
 
+WHAT IT GENERATED
 According to Visit Seattle, the tournament generated an estimated $889 million in total economic impact for Seattle and King County. That total includes $109 million in state and local tax revenue, benefiting key government programs such as housing, social services, and the arts. The tournament also supported about 20,000 jobs. Tourism Economics, part of Oxford Economics, prepared the analysis for Visit Seattle.
 
-Visit Seattle calls it a greater-than-expected total. Its March forecast was $846 million. Visit Seattle credits a larger contingent of international fans attending matches, more overnight visitors attending watch parties than anticipated, and the addition of a second U.S. Men's National Team match.
+Visit Seattle calls it a greater-than-expected total. Its March forecast was $846 million. Visit Seattle credits a larger contingent of international fans attending matches, more overnight visitors attending watch parties than anticipated, and the addition of a second U.S. Men's National Team match. The SeattleFWC26 Final Report counts $513.3 million in off-site visitor spending and $110.6 million in operational spending.
 
-The impact went well beyond spending. Seattle Stadium welcomed 401,400 ticketed fans across six matches. More than 1.2 million people attended Seattle's official fan celebration sites, and four out of five ticketed fans arrived without a personal car, according to the SeattleFWC26 Final Report.
+Not every business had a record summer. Visit Seattle reports mixed results across hospitality: some businesses had record days and weeks, while others saw sales dip compared with last year. Hotel occupancy fell as cruise and convention travel were displaced, but higher room rates lifted overall hotel revenue.
 
-The tournament also left something behind. More than 35 community and legacy projects are part of the tournament's legacy. A commitment to build 26 community soccer fields grew into 52 permanent places for free play across Washington, and more than 1,400 young people and their caregivers received free tickets and support to attend matches.
+WHERE IT REACHED
+The impact didn't stay inside the stadium. Four out of five ticketed fans arrived without a personal car, according to the SeattleFWC26 Final Report. On July 6, Link light rail carried 309,000 riders, a Sound Transit all-time record. More than 3 million visitors came downtown across the six match days, and foot traffic rose 17% over the same days in 2025.
 
-Not every business had a record summer. Visit Seattle reports mixed results across hospitality: some businesses had record days and weeks, while others saw sales dip compared with last year. Hotel occupancy fell as cruise and convention travel were displaced, but higher room rates lifted overall hotel revenue. SeattleFWC26's Final Report explains how future events can help more neighborhoods benefit.
+Neighborhoods felt it too. Pioneer Square counted 149,800 domestic visitors on June 19, its highest day since the Downtown Seattle Association began recording in 2019, and pedestrian traffic in the Chinatown–International District rose 10%. SeattleFWC26 supported more than 350 small businesses. Its Final Report also notes a lesson for next time: "just one block makes a big difference in fan traffic."
+
+WHO IT BROUGHT TOGETHER
+Seattle Stadium hosted 401,400 ticketed fans, including the Juneteenth Match Day between the USA and Australia and the Pride Match between Egypt and IR Iran. More than 1.2 million people attended Seattle's official fan sites, more than 70,000 fans marched to matches, and more than 2,000 volunteers from around the state helped welcome the world. Seattle ranked as the No. 1 U.S. host city for fans on the Action Network Fan Experience Index.
+
+WHAT IT LEAVES BEHIND
+The tournament also left something behind. SeattleFWC26 created more than 35 community and legacy projects. A promise of 26 community soccer fields grew into 52 permanent places for free play across Washington, and more than 1,400 young people and their caregivers received free tickets and support to attend matches. The legacy also includes more than 50 art and cultural projects, a Pacific Northwest hub for USABA Blind Soccer, and upgraded facilities at UW, SU, GU and Lumen Field.
 
 "The World Cup showed us what's possible when our region comes together around a shared vision," said Beth Knox, President and CEO of the Seattle Sports Commission and Foundation and Board Chair of SeattleFWC26. "Most importantly, it showed us that this is just the beginning."
 
@@ -90,11 +124,16 @@ ${SRC_LINE}` }
   ]},
   { id:"heads", label:"Headlines", blocks:[
     { h:"Options", body:
-`Beyond the Final Whistle: Seattle's World Cup Impact
-$889 Million and a Legacy That Lasts: Seattle's World Cup by the Numbers
+`Beyond the Final Whistle: What the World Cup Meant for Seattle
+What It Generated, What It Meant, What It Leaves Behind
+$889 Million and a Legacy That Lasts: Seattle's World Cup Story
 The World Came to Seattle. Here's What It Left Behind.
-A Greater-Than-Expected Total: Inside the World Cup's $889M Impact
-SSC Business Data Report No. 01: FIFA World Cup 2026™` }
+SSC Business Data Report No. 01: FIFA World Cup 2026™` },
+    { h:"Chapter subheads", body:
+`Chapter 1 · Economic impact: What it generated
+Chapter 2 · Regional & local impact: Where it reached
+Chapter 3 · Community engagement: Who it brought together
+Chapter 4 · Lasting legacy: What it leaves behind` }
   ]},
   { id:"alt", label:"Alt text", dynamic:true, blocks:[] }
 ];
@@ -145,6 +184,13 @@ KIT.qa = [
     a:"Visit Seattle hired Tourism Economics, part of Oxford Economics, to produce the estimate. SSC uses Visit Seattle's official figures. Refer methodology questions to Visit Seattle's media contacts.", src:"VS" }
 ];
 
+KIT.qa.push(
+  { q:"Beyond the money, what did the World Cup leave behind?",
+    a:"More than 35 community and legacy projects. A promise of 26 community soccer fields grew into 52 permanent places for free play across Washington, more than 1,400 young people and caregivers got free tickets and support to attend matches, and the legacy includes 50+ art and cultural projects and a Pacific Northwest hub for USABA Blind Soccer. Details are at sea2026.org.", src:"LOC" },
+  { q:"Did the impact reach beyond downtown and the stadium?",
+    a:"Yes. More than 70,000 people attended fan zones across the state, Pioneer Square counted 149,800 domestic visitors on June 19, the highest since DSA began recording in 2019, and Chinatown–International District pedestrian traffic rose 10%. SeattleFWC26 is also candid that benefits varied block by block, and its lessons focus on helping more neighborhoods benefit next time.", src:"LOCGS" }
+);
+
 KIT.sayAvoid = [
   ["an estimated $889 million in total economic impact", "Seattle made, earned, or took in $889M"],
   ["including $109 million in state and local taxes", "$889M plus $109M, or any combined total"],
@@ -161,7 +207,7 @@ KIT.sayAvoid = [
 KIT.agenda = [
   { t:"01", d:"Audience & first use", out:"Decide where this goes first: social carousel, website story, press pitch, or all three at once." },
   { t:"02", d:"Infographic & figures", out:"Approve the hero number, stat slots, wording, and source line." },
-  { t:"03", d:"Story direction", out:"Pick a lead story angle and one or two companion pieces." },
+  { t:"03", d:"Story direction", out:"Confirm the four-chapter flow (economic impact, regional and local, community engagement, lasting legacy) with SeattleFWC26, and pick a lead angle for media." },
   { t:"04", d:"Press readiness", out:"Confirm the spokesperson, what goes to Visit Seattle, and the tough-question answers." },
   { t:"05", d:"Owners & launch date", out:"Confirm who owns design, channels, and final approval, and set the launch date." }
 ];
