@@ -19,7 +19,7 @@ KIT.chapters = [
     paras: [
       "Visit Seattle estimates the tournament generated $889 million in total economic impact for Seattle and King County. That includes $109 million in state and local tax revenue, benefiting key government programs such as housing, social services, and the arts. The tournament also supported about 20,000 jobs. {{VS}}",
       "Behind the total is spending by visitors and by the event itself. The SeattleFWC26 Final Report counts $513.3 million in off-site visitor spending and $110.6 million in operational spending. The tournament touched nearly every part of the region, from airports and hotels to restaurants and neighborhood business districts. {{LOC}}",
-      "It also came in higher than expected. Visit Seattle's forecast moved from $929 million in December 2024 to $846 million in March 2026, then landed at $889 million. Visit Seattle credits a larger contingent of international fans, more overnight visitors at watch parties than anticipated, and a second U.S. Men's National Team match. {{VS}}"
+      "It also came in higher than expected. Visit Seattle's forecast moved from $929 million in December 2024 to $846 million in March 2026, then landed at $889 million. Visit Seattle credits a larger contingent of international fans, more overnight visitors at watch parties than anticipated, and a second U.S. Men's National Team match. {{PRE}} {{VS}}"
     ],
     figs: ["tax", "jobs", "offsite", "ops"],
     honest: {

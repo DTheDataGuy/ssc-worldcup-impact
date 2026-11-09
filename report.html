@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Seattle's World Cup: The Story Behind the Numbers · SSC Business Data Report No. 01</title>
+<link rel="stylesheet" href="fonts.css">
+<style>
+@page{size:8.5in 11in;margin:0}
+:root{--night:#282331;--night2:#332d40;--grey:#b6c5cb;--mist:#f0f5f7;--bay:#006660;--sky:#80d6d6;--storm:#0c88a5;--field:#63c900;--yellow:#fce012;--ink:#1d1a24;--ink2:#4a4656;--ink3:#6c6878;--line:#d8e1e5;
+  --d:'Clash Display','Satoshi',sans-serif;--b:'Satoshi',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#8a8f99}
+body{font-family:var(--b);color:var(--ink);-webkit-print-color-adjust:exact;print-color-adjust:exact;font-size:10pt;line-height:1.5}
+.page{width:8.5in;height:11in;position:relative;overflow:hidden;background:#fff;margin:0 auto 24px;page-break-after:always;break-after:page;display:flex;flex-direction:column}
+@media print{html,body{background:#fff}.page{margin:0}}
+.bar{display:flex;height:7px;flex:none}.bar i{flex:1}.bar i:nth-child(1){background:var(--yellow)}.bar i:nth-child(2){background:var(--field)}.bar i:nth-child(3){background:var(--sky)}.bar i:nth-child(4){background:var(--storm)}.bar i:nth-child(5){background:var(--bay)}
+.in{padding:.42in .6in 0;flex:1;display:flex;flex-direction:column;min-height:0}
+.rh{display:flex;justify-content:space-between;align-items:center;font-size:7.5pt;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:var(--ink3);padding-bottom:.14in;border-bottom:1px solid var(--line);margin-bottom:.3in}
+.rh span{display:flex;align-items:center;gap:8px}.rh img{width:20px;height:20px}
+.rh b{color:var(--ink)}
+.ft{flex:none;padding:.16in .6in .34in;display:flex;justify-content:space-between;align-items:flex-end;gap:.3in;font-size:6.6pt;line-height:1.45;color:var(--ink3)}
+.ft ol{list-style:none;flex:1}.ft li{overflow-wrap:anywhere}
+.ft li b{color:var(--ink2);font-weight:700}
+.ft a{color:var(--storm);text-decoration:none}
+.ft .pn{font-family:var(--d);font-weight:600;font-size:9pt;color:var(--ink);white-space:nowrap}
+sup{font-size:.62em;font-weight:700;color:var(--storm);line-height:0;margin-left:1px}
+.eb{font-size:7.5pt;letter-spacing:.12em;text-transform:uppercase;font-weight:700}
+h1,h2,h3,.dsp{font-family:var(--d);font-weight:600;letter-spacing:-.01em;line-height:1.04}
+
+/* COVER */
+.cover{background:var(--night);color:#fff}
+.cover .in{padding:.55in .65in .5in}
+.cv-top{display:flex;justify-content:space-between;align-items:flex-start}
+.cv-brand{display:flex;gap:14px;align-items:center}
+.cv-brand img{width:62px;height:62px}
+.cv-brand div{font-size:8pt;letter-spacing:.12em;text-transform:uppercase;font-weight:700;line-height:1.5;color:var(--grey)}
+.cv-brand div b{color:#fff;display:block;font-size:9pt}
+.cv-no{text-align:right;font-family:var(--d);font-weight:600;color:var(--sky);font-size:9pt;letter-spacing:.08em;text-transform:uppercase;line-height:1.5}
+.cv-no b{display:block;color:#fff;font-size:30pt;letter-spacing:0;line-height:1}
+.cv-title{margin-top:.8in;font-size:44pt;max-width:6.6in;line-height:1}
+.cv-title em{font-style:normal;color:var(--sky)}
+.cv-hero{margin-top:.5in}
+.cv-num{font-family:var(--d);font-weight:700;color:var(--yellow);font-size:120pt;line-height:.82;letter-spacing:-.03em}
+.cv-cap{margin-top:.2in;font-size:13pt;line-height:1.4;max-width:5in;font-weight:500}
+.cv-cap small{display:block;color:var(--grey);font-size:8pt;margin-top:6px;letter-spacing:.02em}
+.cv-dek{margin-top:.42in;font-size:11.5pt;line-height:1.55;color:#dcd9e3;max-width:6in}
+.cv-ch{margin-top:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid rgba(255,255,255,.18)}
+.cv-ch div{padding:.16in .12in 0 0}
+.cv-ch b{font-family:var(--d);font-size:22pt;font-weight:600;display:block;line-height:1}
+.cv-ch span{display:block;font-weight:700;font-size:9pt;margin-top:6px}
+.cv-ch i{font-style:normal;color:var(--grey);font-size:8pt}
+.cv-foot{margin-top:.32in;display:flex;justify-content:space-between;font-size:7.5pt;color:var(--grey);letter-spacing:.04em}
+.cv-foot b{color:#fff;font-weight:700}
+
+/* PROLOGUE */
+.pro-lead{font-family:var(--d);font-weight:600;font-size:27pt;line-height:1.1;max-width:6.6in}
+.pro-lead q{quotes:"\201C" "\201D"}
+.pro-by{margin-top:.12in;font-size:8.5pt;color:var(--ink3);font-weight:700;letter-spacing:.04em}
+.pro-body{margin-top:.24in;font-size:11.5pt;line-height:1.6;color:var(--ink2);max-width:6.4in}
+.figs{display:grid;gap:0;border-top:2px solid var(--ink)}
+.fig{padding:.13in .14in .12in 0;border-bottom:1px solid var(--line)}
+.fig b{display:block;font-family:var(--d);font-weight:600;font-size:22pt;line-height:1;letter-spacing:-.01em}
+.fig span{display:block;font-size:8.3pt;font-weight:700;margin-top:6px;line-height:1.3}
+.fig i{display:block;font-style:normal;font-size:7.3pt;color:var(--ink3);margin-top:2px;line-height:1.3}
+.c4{grid-template-columns:repeat(4,1fr)}.c3{grid-template-columns:repeat(3,1fr)}.c2{grid-template-columns:repeat(2,1fr)}
+.spine{margin-top:auto}
+.spine h3{font-size:15pt;margin-bottom:.14in}
+.spine ol{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:.14in .3in}
+.spine li{display:flex;gap:12px;align-items:flex-start;font-size:9.5pt;line-height:1.45}
+.dot{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-family:var(--d);font-weight:600;font-size:10pt}
+.k0{background:var(--yellow);color:var(--ink)}.k1{background:var(--sky);color:var(--ink)}.k2{background:var(--field);color:var(--ink)}.k3{background:var(--bay);color:#fff}
+
+/* CHAPTER OPENER */
+.cho .band{flex:none;padding:.5in .6in .34in;position:relative}
+.cho.a0 .band{background:var(--yellow)}.cho.a1 .band{background:var(--sky)}.cho.a2 .band{background:var(--field)}.cho.a3 .band{background:var(--bay);color:#fff}
+.band .top{display:flex;justify-content:space-between;align-items:center;font-size:7.5pt;letter-spacing:.1em;text-transform:uppercase;font-weight:700}
+.band .top span{display:flex;gap:8px;align-items:center}.band .top img{width:20px;height:20px}
+.band .num{font-family:var(--d);font-weight:700;font-size:92pt;line-height:.8;margin-top:.3in;letter-spacing:-.03em}
+.band .nm{display:flex;align-items:baseline;gap:14px;margin-top:.16in}
+.band .nm b{font-family:var(--d);font-weight:600;font-size:21pt}
+.band .nm i{font-style:normal;font-size:10pt;font-weight:700;opacity:.75}
+.cho .in{padding-top:.36in}
+.ch-head{font-size:24pt;line-height:1.08;max-width:6.8in}
+.ch-body{margin-top:.24in;columns:2;column-gap:.32in;font-size:10.2pt;line-height:1.56;color:var(--ink2)}
+.ch-body p{margin-bottom:.1in;break-inside:avoid-column}
+.ch-body p:first-child::first-line{color:var(--ink);font-weight:700}
+.qt{margin-top:.24in;display:grid;grid-template-columns:30px 1fr;gap:6px;break-inside:avoid}
+.qt .qm{font-family:var(--d);font-weight:700;font-size:42pt;line-height:.8}
+.qt blockquote{font-family:var(--d);font-weight:600;font-size:12.5pt;line-height:1.3;color:var(--ink)}
+.qt cite{display:block;font-style:normal;margin-top:8px;font-family:var(--b);font-size:8pt;color:var(--ink3);font-weight:500;line-height:1.4}
+.qt cite b{color:var(--ink);font-weight:700}
+.a0 .qm{color:#d4b800}.a1 .qm{color:var(--storm)}.a2 .qm{color:#4c9a00}.a3 .qm{color:var(--bay)}
+.means{margin-top:auto;padding:.16in .2in;border-radius:4px;display:grid;grid-template-columns:1.45in 1fr;gap:.18in;align-items:center;background:var(--night);color:#fff}
+.means .eb{color:var(--sky)}
+.means p{font-family:var(--d);font-weight:600;font-size:12.5pt;line-height:1.28}
+
+/* CHAPTER EVIDENCE */
+.sec-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.1in}
+.sec-h h3{font-size:12.5pt}.sec-h span{font-size:7.5pt;color:var(--ink3)}
+.a0 .figs{border-top-color:#d4b800}.a1 .figs{border-top-color:var(--storm)}.a2 .figs{border-top-color:#4c9a00}.a3 .figs{border-top-color:var(--bay)}
+.blk{margin-top:.26in}
+.trail{display:grid;grid-template-columns:repeat(3,1fr);gap:.24in;align-items:end;height:2.05in;padding-bottom:0;border-bottom:1.5px solid var(--ink)}
+.tb{display:flex;flex-direction:column;justify-content:flex-end;height:100%}
+.tb b{font-family:var(--d);font-weight:600;font-size:17pt;margin-bottom:6px}
+.tb i{display:block;background:#d6dfe3}
+.tb.hi i{background:var(--yellow)}
+.tl{display:grid;grid-template-columns:repeat(3,1fr);gap:.24in;margin-top:7px;font-size:7.8pt;line-height:1.35}
+.tl b{display:block;font-size:8.3pt}.tl span{color:var(--ink3)}
+.hb{display:grid;grid-template-columns:1.85in 1fr .75in;gap:.14in;align-items:center;padding:.09in 0;border-bottom:1px solid var(--line);font-size:8.3pt;line-height:1.3}
+.hb b{display:block}.hb span.l{color:var(--ink3)}
+.hb .tr{height:14px;background:#edf2f4}.hb .tr i{display:block;height:100%;background:#a9d9e4}
+.hb.hi .tr i{background:var(--storm)}
+.hb .v{font-family:var(--d);font-weight:600;font-size:12pt;text-align:right}
+.note{padding:.16in .2in;border:1.5px dashed #b9c6cc;border-radius:4px;font-size:9pt;line-height:1.5;color:var(--ink2)}
+.note .eb{color:var(--ink);margin-bottom:5px;display:block}
+.note .nf{display:flex;gap:.3in;margin-top:.1in}
+.note .nf div b{font-family:var(--d);font-weight:600;font-size:14pt;color:var(--ink);display:block;line-height:1}
+.note .nf div span{font-size:7.4pt;color:var(--ink3);display:block;margin-top:3px;max-width:1.6in;line-height:1.3}
+.ml{width:100%;border-collapse:collapse;font-size:8.6pt}
+.ml td{padding:.065in 0;border-bottom:1px solid var(--line);vertical-align:baseline}
+.ml td:first-child{width:1.25in;color:var(--ink3)}.ml td:first-child b{color:var(--ink)}
+.ml td:last-child{text-align:right;font-family:var(--d);font-weight:600;font-size:10.5pt;width:.8in}
+.ml em{font-style:normal;font-size:7pt;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:#e6f7d6;color:#2f6400;padding:1px 6px;border-radius:99px;margin-left:0;display:inline-block;margin-top:3px;white-space:nowrap}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:.32in}
+.fun .fig b{font-size:16pt}
+.che.a3 .fig{padding:.2in .14in .2in 0}.che.a3 .fig b{font-size:26pt}
+.cta{display:flex;justify-content:space-between;align-items:center;background:var(--yellow);padding:.16in .2in;border-radius:4px}
+.cta b{font-family:var(--d);font-weight:600;font-size:15pt}.cta span{font-size:8.5pt;font-weight:500}
+.dark-q{background:var(--night);color:#fff;padding:.22in .24in;border-radius:4px}
+.dark-q .qt{margin-top:0}.dark-q blockquote{color:#fff}.dark-q cite{color:var(--grey)}.dark-q cite b{color:#fff}
+.dark-q .qm{color:var(--sky)!important}
+
+/* CLOSE */
+.close{background:var(--night);color:#fff}
+.close .rh{border-bottom-color:rgba(255,255,255,.15);color:var(--grey)}.close .rh b{color:#fff}
+.el-h{font-size:30pt;max-width:6in}
+.el{margin-top:.24in;font-size:12.5pt;line-height:1.6;color:#e7e4ee;max-width:6.7in}
+.src{margin-top:auto}
+.src h3{font-size:11pt;margin-bottom:.1in;color:var(--sky)}
+.src ol{columns:2;column-gap:.3in;font-size:7.3pt;line-height:1.4;color:var(--grey);padding-left:1.4em}
+.src li{margin-bottom:.06in;break-inside:avoid;overflow-wrap:anywhere}.src li b{color:#fff}
+.src a{color:var(--sky);text-decoration:none}
+.method{margin-top:.22in;padding-top:.16in;border-top:1px solid rgba(255,255,255,.15);display:flex;justify-content:space-between;gap:.4in;font-size:7.8pt;color:var(--grey);line-height:1.5}
+.method b{color:#fff}
+.endmark{display:flex;align-items:center;gap:14px;margin-top:.3in}
+.endmark img{width:48px;height:48px}.endmark div{font-family:var(--d);font-weight:600;font-size:15pt}
+.endmark span{display:block;font-family:var(--b);font-size:8.5pt;font-weight:700;color:var(--yellow);letter-spacing:.04em}
+</style>
+</head>
+<body>
+<div id="doc"></div>
+<script src="data.js"></script>
+<script src="content.js"></script>
+<script src="story.js"></script>
+<script>
+(function(){
+const S = KIT.sources, Q = KIT.quotes, CH = KIT.chapters;
+const byId = {}; KIT.stats.forEach(s => byId[s.id] = s);
+const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const ORDER = []; const num = k => { if (!ORDER.includes(k)) ORDER.push(k); return ORDER.indexOf(k) + 1; };
+let pageSrc;
+const use = k => { if (!pageSrc.includes(k)) pageSrc.push(k); return num(k); };
+const sup = keys => `<sup>${keys.map(use).sort((a,b)=>a-b).join(',')}</sup>`;
+const para = t => { const keys = []; t = t.replace(/\s*\{\{(\w+)\}\}/g, (m,k) => { keys.push(k); return ''; }); return esc(t) + (keys.length ? sup(keys) : ''); };
+const fig = id => { const s = byId[id]; return `<div class="fig"><b>${esc(s.value)}</b><span>${esc(s.label)}${sup([s.src])}</span><i>${esc(s.sub)}</i></div>`; };
+const quote = i => { const q = Q[i]; return `<div class="qt"><div class="qm">\u201C</div><div><blockquote>${esc(q.text)}</blockquote><cite><b>${esc(q.who)}</b>, ${esc(q.role)}${sup([q.src])}</cite></div></div>`; };
+const logo = 'assets/ssc-logo.svg';
+let pageNo = 0;
+const foot = (dark) => { pageNo++; const items = pageSrc.sort((a,b)=>num(a)-num(b)).map(k => `<li><b>${num(k)}</b> ${esc(S[k].short)}, ${esc(S[k].date)}. <a href="${S[k].url}">${esc(S[k].url.replace(/^https?:\/\/(www\.)?/,''))}</a></li>`).join('');
+  return `<div class="ft"><ol>${items}</ol><span class="pn">${String(pageNo).padStart(2,'0')}</span></div>`; };
+const rh = (right) => `<div class="rh"><span><img src="${logo}" alt="">SSC Business Data Report · <b>No. 01</b></span><span>${right}</span></div>`;
+const pages = [];
+const page = (cls, fn) => { pageSrc = []; const inner = fn(); pages.push(`<section class="page ${cls}">${inner}</section>`); };
+
+// 1 COVER
+page('cover', () => { pageSrc = []; num('VS'); pageNo++; return `<div class="bar"><i></i><i></i><i></i><i></i><i></i></div><div class="in">
+  <div class="cv-top"><div class="cv-brand"><img src="${logo}" alt="Seattle Sports Commission"><div><b>Seattle Sports Commission</b>Business Data Report</div></div>
+  <div class="cv-no">Report<b>No. 01</b>November 2026</div></div>
+  <h1 class="cv-title">Seattle's World Cup: <em>the story behind the numbers.</em></h1>
+  <div class="cv-hero"><div class="cv-num">$889M</div><div class="cv-cap">estimated total economic impact for Seattle &amp; King County<small>Visit Seattle, Sept. 22, 2026 · analysis by Tourism Economics, part of Oxford Economics</small></div></div>
+  <p class="cv-dek">The FIFA World Cup 26\u2122 brought six matches, eight national teams and fans from around the world to Seattle. This report follows that summer in four chapters: what it generated for our economy, how it reached the whole region, who it brought together, and what it leaves behind.</p>
+  <div class="cv-ch">${CH.map((c,i) => `<div><b style="color:${['var(--yellow)','var(--sky)','var(--field)','#4fc2b8'][i]}">${c.n}</b><span>${esc(c.name)}</span><i>${esc(c.verb)}</i></div>`).join('')}</div>
+  <div class="cv-foot"><span><b>seattlesports.org</b></span><span>Prepared by The Data Guys\u2122 for the Seattle Sports Commission</span></div>
+  </div>`; });
+
+// 2 PROLOGUE
+page('', () => { const P = KIT.prologue; return `<div class="bar"><i></i><i></i><i></i><i></i><i></i></div><div class="in">${rh('Prologue')}
+  <p class="eb" style="color:var(--storm);margin-bottom:.14in">${esc(P.kicker)}</p>
+  <p class="pro-lead"><q>${esc(P.lead)}</q></p>
+  <p class="pro-by">Visit Seattle${sup([P.leadSrc])}</p>
+  <p class="pro-body">${esc(P.body)}</p>
+  <div class="figs c4" style="margin-top:.34in">${P.figs.map(fig).join('')}</div>
+  <div class="dark-q a1" style="margin-top:.36in">${quote(4)}</div>
+  <div class="spine"><h3>The story in four lines</h3><ol>${KIT.storyLines.map((l,i) => `<li><span class="dot k${i}">${l.n}</span><span><b>${esc(l.name)}.</b> ${esc(l.line)}${sup(i===0?['VS']:i===1?['LOC','LEG']:i===2?['LOC']:['LOC','LEG'])}</span></li>`).join('')}</ol></div>
+  <div style="height:.3in"></div></div>${foot()}`; });
+
+// CHAPTERS
+CH.forEach((c, ci) => {
+  // opener
+  page(`cho a${ci}`, () => `<div class="band"><div class="top"><span><img src="${logo}" alt="">SSC Business Data Report · No. 01</span><span>Chapter ${c.n} of 04</span></div>
+    <div class="num">${c.n}</div><div class="nm"><b>${esc(c.name)}</b><i>${esc(c.verb)}</i></div></div>
+    <div class="in"><h2 class="ch-head">${esc(c.head)}${c.headSrc ? sup([c.headSrc]) : ''}</h2>
+    <div class="ch-body">${c.paras.map(p => `<p>${para(p)}</p>`).join('')}</div>
+    ${quote(c.quotes[0])}
+    <div class="means" style="margin-top:auto"><span class="eb">What it means for Seattle</span><p>${esc(c.means)}</p></div>
+    </div>${foot()}`);
+  // evidence
+  page(`che a${ci}`, () => {
+    let h = `<div class="bar"><i></i><i></i><i></i><i></i><i></i></div><div class="in">${rh(`Chapter ${c.n} · <b>${esc(c.name)}</b>`)}`;
+    h += `<div class="sec-h"><h3>${ci===3?'What the legacy includes':'By the numbers'}</h3><span>Published figures, word for word</span></div>`;
+    h += `<div class="figs ${c.figs.length===4?'c4':c.figs.length===8?'c4':'c3'}">${c.figs.map(fig).join('')}</div>`;
+    if (c.visual === 'trail') {
+      const pts = [['fc2024','Dec. 2024','Preliminary forecast','PRE'],['fc2026','March 2026','March forecast','VS'],['impact','Sept. 2026','Total economic impact','VS']];
+      h += `<div class="blk"><div class="sec-h"><h3>The forecast trail</h3><span>Estimated total economic impact, Seattle &amp; King County</span></div>
+        <div class="trail">${pts.map(([id,,,],i) => { const v = parseFloat(byId[id].value.replace(/[^\d.]/g,'')); return `<div class="tb ${i===2?'hi':''}"><b>${esc(byId[id].value)}</b><i style="height:${(v/960*1.45).toFixed(2)}in"></i></div>`; }).join('')}</div>
+        <div class="tl">${pts.map(([id,d,l,src]) => `<div><b>${d}</b><span>${l}${sup([src])}</span></div>`).join('')}</div></div>`;
+    }
+    if (c.visual === 'link') {
+      const rows = [['stprev','Before the World Cup','Seahawks parade record'],['st297','June 19','USA vs. Australia'],['link','July 6','USA vs. Belgium · all-time record']];
+      const n = id => parseFloat(byId[id].value.replace(/,/g,'')) * (/K$/.test(byId[id].value) ? 1000 : 1);
+      h += `<div class="blk"><div class="sec-h"><h3>Link light rail, busiest single days</h3><span>Riders and boardings in one day, as published</span></div>
+        ${rows.map(([id,d,l],i) => `<div class="hb ${i===2?'hi':''}"><span><b>${d}</b><span class="l">${l}${sup([byId[id].src])}</span></span><span class="tr"><i style="width:${(n(id)/320000*100).toFixed(1)}%"></i></span><span class="v">${esc(byId[id].value)}</span></div>`).join('')}</div>`;
+    }
+    if (c.visual === 'matches') {
+      h += `<div class="blk two"><div><div class="sec-h"><h3>Six matches at Seattle Stadium</h3></div><table class="ml">${KIT.matches.map(m => `<tr><td><b>${esc(m.date.replace(/^\w+, /,''))}</b><br>${esc(m.stage.replace(/ · .*/,''))}</td><td>${esc(m.home)} vs. ${esc(m.away)}${/·/.test(m.stage)?`<br><em>${esc(m.stage.split(' · ')[1])}</em>`:''}</td><td>${esc(m.score)}</td></tr>`).join('')}</table>
+        <p style="font-size:7pt;color:var(--ink3);margin-top:5px">Results${sup(['MATCH','FIFA'])}</p></div>
+        <div><div class="sec-h"><h3>Fun facts and records</h3></div><div class="figs c2 fun">${c.fun.map(fig).join('')}</div></div></div>`;
+    }
+    if (c.quotes[1] !== undefined) h += `<div class="blk dark-q">${quote(c.quotes[1])}</div>`;
+    else if (ci === 0) h += '';
+    if (c.visual === 'legacy') {
+      h += `<div class="blk" style="margin-top:auto"><div class="cta"><span><b>sea2026.org</b><br>Explore the programs, playbooks and partnerships across Washington</span><span style="font-family:var(--d);font-size:20pt">\u2197</span></div></div>`;
+    }
+    if (c.honest) h += `<div class="blk note" style="margin-top:auto"><span class="eb">${esc(c.honest.h)}</span>${esc(c.honest.t)}${sup(c.honest.srcs)}
+      ${c.honest.figs ? `<div class="nf">${c.honest.figs.map(id => `<div><b>${esc(byId[id].value)}</b><span>${esc(byId[id].label)}${sup([byId[id].src])}</span></div>`).join('')}</div>` : ''}</div>`;
+    h += `<div style="height:.24in"></div></div>${foot()}`;
+    return h;
+  });
+});
+
+// CLOSE
+page('close', () => { const el = document.createElement('div'); return `<div class="bar"><i></i><i></i><i></i><i></i><i></i></div><div class="in">${rh('The 30-second version')}
+  <h2 class="el-h">One story, told the same way everywhere.</h2>
+  <p class="el">Seattle delivered on the world stage. Visit Seattle estimates the World Cup generated $889 million in total economic impact for Seattle and King County, including $109 million in state and local tax revenue, and supported about 20,000 jobs. That impact reached the whole region: four out of five ticketed fans arrived without a personal car, and more than 3 million visitors came downtown on match days. It brought people together, with 401,400 ticketed fans and more than 1.2 million at Seattle fan sites. And it leaves something behind: more than 35 community and legacy projects, including 52 playfields and free tickets for more than 1,400 young people and their caregivers.</p>
+  <div class="endmark"><img src="${logo}" alt=""><div>The final whistle was just the beginning.<span>seattlesports.org</span></div></div>
+  <div class="src"><h3>Sources</h3><ol>${ORDER.map(k => `<li><b>${esc(S[k].title.replace(/\s\u2014\s/g,': '))}</b>. ${esc(S[k].org || S[k].short)}, ${esc(S[k].date)}. <a href="${S[k].url}">${esc(S[k].url)}</a></li>`).join('')}</ol>
+  <div class="method"><span><b>How to read this report.</b> Every figure appears exactly as its source published it. Nothing is calculated, modeled or rounded here. The $889M is an economic-impact estimate by Visit Seattle, with analysis by Tourism Economics, part of Oxford Economics. It is not city revenue or SSC income.</span><span style="white-space:nowrap;text-align:right">Prepared by<br><b>The Data Guys\u2122</b></span></div></div>
+  <div style="height:.42in"></div></div>`; });
+
+document.getElementById('doc').innerHTML = pages.join('');
+// overflow check
+window.__overflow = [...document.querySelectorAll('.page')].map((p,i) => { const inn = p.querySelector('.in'); return inn && inn.scrollHeight > inn.clientHeight + 1 ? i+1 : 0; }).filter(Boolean);
+})();
+</script>
+</body>
+</html>
