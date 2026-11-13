@@ -715,11 +715,26 @@
     say(st.hidden ? `Added, but it won't fit in this format. Remove a figure to make room.` : `Added to slide ${deck.cur+1}, ${TYPE_NAME[s.type].toLowerCase()}`);
   };
 
-  // photo (per slide)
+  // photo (per slide). Large phone photos are scaled to 2400px on the long edge so exports stay fast and reliable.
+  function shrinkPhoto(src){
+    return new Promise(res => {
+      const im = new Image();
+      im.onload = () => {
+        const max = 2400, k = Math.min(1, max / Math.max(im.naturalWidth, im.naturalHeight));
+        if (k >= 1 && src.length < 3e6) return res(src);
+        try {
+          const c = document.createElement('canvas'); c.width = Math.round(im.naturalWidth * k); c.height = Math.round(im.naturalHeight * k);
+          c.getContext('2d').drawImage(im, 0, 0, c.width, c.height); res(c.toDataURL('image/jpeg', 0.9));
+        } catch(e){ res(src); }
+      };
+      im.onerror = () => res(src);
+      im.src = src;
+    });
+  }
   $('#photoIn').addEventListener('change', e => {
     const f = e.target.files[0]; if(!f) return;
     const rd = new FileReader();
-    rd.onload = () => { state.photo = rd.result; $('#photoClear').hidden = false; renderPoster(); };
+    rd.onload = async () => { state.photo = await shrinkPhoto(rd.result); $('#photoClear').hidden = false; renderPoster(); };
     rd.readAsDataURL(f);
   });
   $('#photoClear').addEventListener('click', () => { state.photo = null; $('#photoIn').value=''; $('#photoClear').hidden = true; renderPoster(); });
@@ -765,7 +780,15 @@
     const [w,h] = DIMS[poster.dataset.format];
     await document.fonts.ready;
     const opts = { width:w, height:h, pixelRatio:1, cacheBust:true };
-    if (!window.__pngWarm){ await htmlToImage.toPng(poster, opts); await htmlToImage.toPng(poster, opts); window.__pngWarm = true; }
+    // Safari decodes images inside the export lazily, so the first pass after a new photo can come back without it.
+    // Warm up once per page and again for every photo that has not been rendered yet.
+    const warmed = window.__pngWarmed || (window.__pngWarmed = new Set());
+    const key = state.photo ? 'photo:' + state.photo.length + ':' + state.photo.slice(-64) : 'base';
+    if (!warmed.has('base') || !warmed.has(key)){
+      if (state.photo) { const im = new Image(); im.src = state.photo; try { await im.decode(); } catch(e){} }
+      await htmlToImage.toPng(poster, opts); await htmlToImage.toPng(poster, opts);
+      warmed.add('base'); warmed.add(key);
+    }
     return kind === 'jpg' ? htmlToImage.toJpeg(poster, { ...opts, quality:0.94, backgroundColor:getComputedStyle(poster).backgroundColor }) : htmlToImage.toPng(poster, opts);
   }
   const bytes = url => { const b = atob(url.split(',')[1]), u = new Uint8Array(b.length); for (let i=0;i<b.length;i++) u[i] = b.charCodeAt(i); return u; };
